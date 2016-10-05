@@ -11,8 +11,8 @@ function humanFileSize($size, $unit="") {
 function post($action) {
 	// Prepare the POST data
 	// <configure> :
-	$postfields["key"] = "YOUR API KEY";
-	$postfields["hash"] = "YOUR API HASH";
+	$postfields["key"] = $_POST["key"];
+	$postfields["hash"] = $_POST["hash"];
 	
 	// This is the hostname of the master SolusVM server where you go to boot / reboot / configure / reinstall / get API keys for your VPS
 	
