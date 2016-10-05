@@ -8,7 +8,7 @@ function humanFileSize($size, $unit="") {
     return number_format($size/(1<<10),2)." KB";
   return number_format($size)." bytes";
 }
-function post($action) {
+function post($action,$get) {
 	// Prepare the POST data
 	// <configure> :
 	$postfields["key"] = $_POST["key"];
@@ -28,9 +28,10 @@ function post($action) {
 		$postfields["mem"] = "true";
 		$postfields["bw"] = "true";
 	}
+if($get==""){}else{$get2="?".$get}
 	// Prepare the POST request
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "{$masterurl}/api/client/command.php");
+	curl_setopt($ch, CURLOPT_URL, "{$masterurl}/api/client/command.php".$get2);
 	curl_setopt($ch, CURLOPT_POST, 1);
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -90,7 +91,7 @@ if(isset($_GET['action'])) {
 switch($action)
 {
 	case 'info':
-		$result = post("info");
+		$result = post("info","");
 		
 		if($result['error'] == 0) {
 			$return = $result;
@@ -105,7 +106,7 @@ switch($action)
 		break;
 	
 	case 'reboot':
-		$result = post("reboot");
+		$result = post("reboot","");
 		
 		if($result['error'] == 0) {
 			$return = $result;
@@ -118,7 +119,20 @@ switch($action)
 		break;
 		
 	case 'boot':
-		$result = post("boot");
+		$result = post("boot","");
+		
+		if($result['error'] == 0) {
+			$return = $result;
+			
+			$return['message'] = "Server booting now.";
+		} else {
+			$return = $result;
+		}
+		
+		break;
+		
+	case 'make':
+		$result = post("make","image_id=".$_GET["image_id"]."&cpu=".$_GET["cpu"]."&memory=".$_GET["memory"]."&storage=".$_GET["storage"]);
 		
 		if($result['error'] == 0) {
 			$return = $result;
@@ -131,7 +145,7 @@ switch($action)
 		break;
 			
 	case 'shutdown':
-		$result = post("shutdown");
+		$result = post("shutdown","");
 		
 		if($result['error'] == 0) {
 			$return = $result;
@@ -218,6 +232,32 @@ switch($action)
 				<?php } ?>
 				</div>
 			</div>
+		
+		<?php } ?>
+		
+		<?php if($action == "make") { ?>
+		
+			<form><h3>image id</h3>
+			<input name="image_id" />
+			
+			<h3>ram</h3>
+			<input name="ram" />
+			
+			<h3>cpu</h3>
+			<input name="cpu" />
+			
+			<h3>storage</h3>
+			<input name="storage" />
+				
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Actions</h3>
+				</div>
+				
+				<div class="panel-body">
+					<button type="submit" class="btn btn-primary btn-block">make instances</button>
+				</div>
+			</div></form>
 		
 		<?php } ?>
 		
