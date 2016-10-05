@@ -11,8 +11,8 @@ function humanFileSize($size, $unit="") {
 function post($action,$get) {
 	// Prepare the POST data
 	// <configure> :
-	$postfields["key"] = $_POST["key"];
-	$postfields["hash"] = $_POST["hash"];
+	$postfields["key"] = "test";
+	$postfields["hash"] = "test";
 	
 	// This is the hostname of the master SolusVM server where you go to boot / reboot / configure / reinstall / get API keys for your VPS
 	
@@ -28,7 +28,7 @@ function post($action,$get) {
 		$postfields["mem"] = "true";
 		$postfields["bw"] = "true";
 	}
-if($get==""){}else{$get2="?".$get}
+if($get==""){}else{$get2="?".$get;}
 	// Prepare the POST request
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, "{$masterurl}/api/client/command.php".$get2);
