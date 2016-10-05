@@ -36,7 +36,7 @@ $xmlars3=$xmlars2["0"];
 $xmlars4=$xmlars3["@attributes"];
 $boot=str_replace("https://beescale.com/api/","",$xmlars3["@attributes"]);
 
-if($instances["stats"]=="pending"){$vmstatus="offline";}else{if($instances["stats"]=="poweroff"){$vmstatus="offline";}else{$vmstatus="online";}}
+if($instances["stats"]==""){$vmstatus="offline";}else{if($instances["stats"]=="pending"){$vmstatus="offline";}else{if($instances["stats"]=="poweroff"){$vmstatus="offline";}else{$vmstatus="online";}}}
 
 if($_POST["key"]=="test"){
 if($_POST["hash"]=="test"){
