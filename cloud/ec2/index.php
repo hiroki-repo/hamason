@@ -175,6 +175,9 @@ switch($action)
 		<h1>SolusVM-Status</h1>
 		<hr/>
 		
+		<?php
+		if($_GET["action"] == "maker") {$return['error']=0;}
+		?>
 		<?php if($return['error'] == 1) { ?>
 			<div class="alert alert-danger" role="alert"><?php echo $return['message']; ?></div>
 			
@@ -236,7 +239,7 @@ switch($action)
 		
 		<?php } ?>
 		
-		<?php if($action == "maker") { ?>
+		<?php if($_GET["action"] == "maker") { ?>
 		
 			<form action="?action=make"><h3>image id</h3>
 			<input name="image_id" />
