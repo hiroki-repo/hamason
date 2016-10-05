@@ -1,0 +1,6 @@
+<img src="/images/exclamation.png" />
+                Nyní využíváte bezplatnou, časově omezenou, trial verzi uživatelského účtu.
+                Můžete si vyzkoušet služby  jako například vytváření virtuálních serverů nebo  API.
+                Dostupné zdroje jsou vám však velmi limitovány.
+                Povýšit na plnou verzi uživatelského účtu můžete prvním dobitím kreditu.
+                Děkujeme za váš zájem o služby !

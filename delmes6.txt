@@ -1,0 +1,33 @@
+<script type="text/javascript">
+                $(document).ready(function(){
+                  window.numberOfUnreadNotifications = function (repeat) {
+                    $.ajax({
+                      type: "POST",
+                      url: "/customer/user-notifications/numberofunreadnotif",
+                      async: true,
+                      cache: false,
+                      timeout: 50000,
+                      success: function(data){
+                        if( data != 0 ) {
+                          $('a#notiflink').css("color","orange");
+                          $('a#notifbutton').text("Notification"+' ('+$.trim(data)+')');
+                        }
+                        else {
+                          $('a#notiflink').css("color","white");
+                          $('a#notifbutton').text("Notification");
+                        }
+                        $('a#notiflink').text('('+$.trim(data)+')');
+                        if( repeat == 1 ) setTimeout( function() { numberOfUnreadNotifications(1) }, 5000);
+                      },
+                      error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        if( repeat == 1 ) setTimeout( function() { numberOfUnreadNotifications(1) }, 5000);
+                      }
+                    });
+                  }
+                  numberOfUnreadNotifications(1);
+                });
+              </script>
+
+               <a href="/customer/user-notifications/" title=Notification id="notiflink"></a> 
+              <span> | </span>
+              <a href="/customer/">Server room</a>

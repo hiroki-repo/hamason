@@ -1,0 +1,33 @@
+<a href="/customer/credit/"
+                    
+                  >Credit</a>
+                </li>
+                <li>
+                  <a href="/customer/account/"
+                    
+                  >Account</a>
+                </li>
+                                <li>
+                  <a href="/customer/user-log/"
+                    
+                  >Log</a>
+                </li>
+                <li>
+                  <a href="/customer/user-notifications/" id="notifbutton"
+                    
+                  >Notification</a>
+                </li>
+                <li>
+                  <a href="/customer/help/"
+                    
+                  >Help</a>
+                </li>
+                <li>
+                  <a href="/customer/help/api"
+                    
+                  >API</a>
+                </li>
+                <li>
+                  <a href="/customer/download/"
+                    
+                  >Download</a>

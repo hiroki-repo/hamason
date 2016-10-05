@@ -1,0 +1,15 @@
+<li><a href="/"
+                  
+                  >Homepage</a></li>
+                 <li><a href="/customer/"
+                  class="current"
+                  >Server room</a></li>
+                <li><a href="/front/how-it-works/"
+                  
+                  >How it works</a></li>
+                <li><a href="/front/pricing/"
+                  
+                  >Pricing</a></li>
+                <li><a href="/front/contact/"
+                  
+                  >Contact</a></li>

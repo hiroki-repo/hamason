@@ -1,0 +1,65 @@
+<!-- Google Analytics begin -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-11657253-1']);
+_gaq.push(['_setDomainName', '.beescale.com']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+ var ga = document.createElement('script');
+ ga.type = 'text/javascript';
+ ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0];
+ s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+<!-- Google Analytics end -->
+<script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = '97bcaa9394435fb70c50ff2e7f6ec0158f9f26ab';
+    window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
+    smartsupp('language', "en");
+    smartsupp('chat:avatar', '/images/beescale-logo-notext.jpg');
+    smartsupp('theme:colors', {
+        primary: '#3B444B',
+        banner: '#E38904',
+        widget: '#E38904',
+        widgetText: '#000000',
+        primaryText: '#ffffff'
+    });
+</script>
+<!-- ETARGET code for Retargeting -->
+<script type="text/javascript">
+  function EtargetTimedCookie(id) {
+    this.pr = 'etargetTimedX';
+    var a = id.split('-');
+    this.nd = a[0];
+    this.id = a[1];
+    this.sc = function() {
+      var d = new Date();
+      d.setTime(d.getTime() + 1800000);
+      document.cookie = this.pr + this.nd + this.id + '=1; expires=' + d.toGMTString() + '; path=/';
+    },
+    this.gc = function(){
+      return (document.cookie.indexOf(this.pr+this.nd+this.id+'=1')>-1);
+    },
+    this.go = function() {
+      this.c = this.gc();
+      if (!this.c) {
+        this.sc();
+        this.scr = document.createElement('script');
+        document.body.appendChild(this.scr);
+        this.scr.async = true;
+        this.scr.src = 'https://' + this.nd + '.search.etargetnet.com/rt.php?z=' + this.id;
+      }
+    }, this.go();
+  }
+  EtargetTimedCookie('cz-23');
+</script>
+<!-- ETARGET code for Retargeting end-->

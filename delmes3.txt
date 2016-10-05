@@ -1,0 +1,12 @@
+<li class="twitterIcon">
+              <a href="http://twitter.com/beescale" rel="publisher"
+              >Twitter</a>
+            </li>
+            <li class="facebook">
+              <a href="http://facebook.com/beescale#" rel="publisher"
+              >Facebook</a>
+            </li>
+            <li class="googleplusIcon">
+              <a href="https://plus.google.com/108137644688077226925" rel="publisher"
+              >Google+</a>
+            </li>
