@@ -44,7 +44,8 @@ if($_POST["status"]=="true"){echo "<vmstat>".$vmstatus."</vmstat>";}
 if($_POST["action"]=="status"){
 echo "<status>success</status><statusmsg>".$vmstatus."</statusmsg>";}
 if($_POST["action"]=="make"){
-echo "<status>success</status><statusmsg>".$vmstatus."</statusmsg>";}
+$instances=getcloud("instances",$_GET,"true","false","","");
+echo "<status>success</status><statusmsg>vm created</statusmsg>";}
 if($_POST["action"]=="shutdown"){
 echo "<status>success</status><statusmsg>shutdown</statusmsg>";}
 if($_POST["action"]=="reboot"){
