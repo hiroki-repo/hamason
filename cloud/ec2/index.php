@@ -235,9 +235,9 @@ switch($action)
 		
 		<?php } ?>
 		
-		<?php if($action == "make") { ?>
+		<?php if($action == "maker") { ?>
 		
-			<form><h3>image id</h3>
+			<form action="?action=make"><h3>image id</h3>
 			<input name="image_id" />
 			
 			<h3>ram</h3>
