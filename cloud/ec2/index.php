@@ -225,6 +225,7 @@ switch($action)
 				<div class="panel-body">
 				<?php if($return['vmstat'] == "offline") { ?>
 					<a class="btn btn-primary btn-block" href="?action=boot" role="button">Boot</a>
+					<a class="btn btn-primary btn-block" href="?action=maker" role="button">Make VM</a>
 				<?php } else { ?>
 					<a class="btn btn-primary btn-block" href="?action=shutdown" role="button">Shutdown</a>
 					<a class="btn btn-primary btn-block" href="?action=reboot" role="button">Reboot</a>
