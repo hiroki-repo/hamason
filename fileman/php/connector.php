@@ -19,7 +19,7 @@ include_once dirname(__FILE__).DIRECTORY_SEPARATOR.'elFinderVolumeLocalFileSyste
  * @return bool|null
  **/
 function access($attr, $path, $data, $volume) {
-	return strpos(basename($path), '.tmb') === 0 || strpos(basename($path), 'fileman') === 0    // if file/folder begins with '.' (dot)
+	return strpos(basename($path), '.tmb') === 0 || strpos(basename($path), '_file-manager') === 0    // if file/folder begins with '.' (dot)
 		? !($attr == 'read' || $attr == 'write')    // set read+write to false, other (locked+hidden) set to true
 		:  null;                                    // else elFinder decide it itself
 }
