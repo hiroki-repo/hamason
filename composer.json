@@ -1,0 +1,14 @@
+{
+    "name": "hiroki-repo/hamason",
+    "description": "Hamason",
+    "keywords": ["cloud", "foreman", "php", "hhvm", "apache", "apache2", "nginx"],
+    "homepage": "https://github.com/hiroki-repo/hamason",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Zuelke",
+            "email": "dz@heroku.com"
+        }
+    ]
+}
