@@ -32,7 +32,7 @@
 				</div>
 				
 				<div class="panel-body">
-									<a class="btn btn-primary btn-block" href="ec2" role="button">Use a EC2</a>
+									<a class="btn btn-primary btn-block" href="/vpslogonurl.php" role="button">Use a EC2</a>
 					<a class="btn btn-primary btn-block" href="storage" role="button">Use a Storage</a>
 					<a class="btn btn-default btn-block" href="?action=info" role="button">Reload the page</a>
 								</div>
