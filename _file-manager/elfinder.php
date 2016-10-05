@@ -14,18 +14,21 @@
 		<script type="text/javascript" src="js/elfinder.min.js"></script>
 		<!-- elFinder translation (OPTIONAL) -->
 		<script type="text/javascript" src="js/i18n/elfinder.jp.js"></script>
-		<!-- elFinder initialization -->
+		<?php
+				echo '<!-- elFinder initialization -->
 				<script type="text/javascript" charset="utf-8">
 					$().ready(function() {
-						var elf = $('#elfinder').elfinder({
-							url : 'php/connector.php?access=219.110.201.211_ee26d5729c5c3307d67ebe04aae79c6c1d14c4e2',
-							lang: 'jp',
+						var elf = $(\'#elfinder\').elfinder({
+							url : \'php/connector.php?access='.$getHash.'\',
+							lang: \'jp\',
 							resizable: false,
 							width: 890,
 							height: 580,
-						}).elfinder('instance');
+						}).elfinder(\'instance\');
 					});
-				</script>		
+				</script>';
+		?>
+		
 	</head>
 	<body>
 		<!-- Element where elFinder will be created (REQUIRED) -->

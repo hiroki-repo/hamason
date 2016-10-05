@@ -1,5 +1,6 @@
 <?php
 
+header("Location: elfinder.php");
 function hashFindFile($file) {
 	if($file) {
 		if (file_exists('sessions/'.$file)) {
