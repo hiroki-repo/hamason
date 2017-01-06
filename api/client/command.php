@@ -38,21 +38,27 @@ $boot=str_replace("https://beescale.com/api/","",$xmlars3["@attributes"]);
 
 if($instances["stats"]==""){$vmstatus="offline";}else{if($instances["stats"]=="pending"){$vmstatus="offline";}else{if($instances["stats"]=="poweroff"){$vmstatus="offline";}else{$vmstatus="online";}}}
 
-if($_POST["key"]=="test"){
-if($_POST["hash"]=="test"){
-if($_POST["status"]=="true"){echo "<vmstat>".$vmstatus."</vmstat>";}
-if($_POST["action"]=="status"){
+if($_SERVER["REQUEST_METHOD"] != "POST"){
+    $POSTU=$_GET;
+}else{
+    $POSTU=$_POST;
+}
+
+if($POSTU["key"]=="test"){
+if($POSTU["hash"]=="test"){
+if($POSTU["status"]=="true"){echo "<vmstat>".$vmstatus."</vmstat>";}
+if($POSTU["action"]=="status"){
 echo "<status>success</status><statusmsg>".$vmstatus."</statusmsg>";}
-if($_POST["action"]=="make"){
+if($POSTU["action"]=="make"){
 $instances=getcloud("instances",$_GET,"true","false","","");
 echo "<status>success</status><statusmsg>vm created</statusmsg>";}
-if($_POST["action"]=="shutdown"){
+if($POSTU["action"]=="shutdown"){
 echo "<status>success</status><statusmsg>shutdown</statusmsg>";}
-if($_POST["action"]=="reboot"){
+if($POSTU["action"]=="reboot"){
 echo "<status>success</status><statusmsg>rebooted</statusmsg>";}
-if($_POST["action"]=="boot"){
+if($POSTU["action"]=="boot"){
 $instances=getcloud($boot,"","true","false","","");
 echo "<status>success</status><statusmsg>booted</statusmsg>";}
-if($_POST["action"]=="info"){echo "<ipaddr>123.123.123.123,122.122.122.122,111.111.111.111</ipaddr><hdd>10240000000,30720000,993280000,percentused</hdd><mem>1024000000,1024000,1022976000,percentused</mem><bw>10240000000000,1024000000,1022976000000,percentused</bw><hostname>hirokivps</hostname><ipaddress>".$instances["public_addresses"]."</ipaddress><password>".$instances["password"]."</password>";}
+if($POSTU["action"]=="info"){echo "<ipaddr>123.123.123.123,122.122.122.122,111.111.111.111</ipaddr><hdd>10240000000,30720000,993280000,percentused</hdd><mem>1024000000,1024000,1022976000,percentused</mem><bw>10240000000000,1024000000,1022976000000,percentused</bw><hostname>hirokivps</hostname><ipaddress>".$instances["public_addresses"]."</ipaddress><password>".$instances["password"]."</password>";}
 }else{echo "<status>error</status><statusmsg>Invalid hash</statusmsg>";}
 }else{echo "<status>error</status><statusmsg>Invalid key</statusmsg>";}
